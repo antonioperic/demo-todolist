@@ -1,0 +1,34 @@
+{% extends '::frontend/frontend.html.twig' %}
+{% from '::frontend/Macros/actions.html.twig' import userlist %}
+{% import '::frontend/Macros/alerts.html.twig' as alerts %}
+
+{% block body_inner %}
+
+	<div class="page-header">
+		<h1>Edit task list</h1>
+	</div>
+
+	{% include '::frontend/Helpers/messages.html.twig' %}
+
+	<form class="form-horizontal" method="POST" action="{{ path('practice_task-list_update', {'id':entity.id}) }}" role="form">
+		<div class="form-group">
+			{{ form_label(form.name, label|default(null), {'label_attr':{'class':'col-lg-2 control-label sr-only'}}) }}
+			<div class="col-lg-10">
+                                                        {{ form_widget(form.name, {'attr':{'class':'form-control','placeholder':'Task list name'} }) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(form.users, label|default(null), {'label_attr':{'class':'col-lg-2 control-label sr-only'}}) }}
+			<div class="col-lg-10">
+                                                        {{ form_widget(form.users, {'attr':{'class':'form-control'} }) }}
+			</div>
+		</div>
+                                <div class="form-group">
+			<div class="col-lg-offset-2 col-lg-10">
+				<button type="submit" class="btn btn-primary">Save task list</button>
+			</div>
+		</div>
+                                {{ form_rest(form) }}
+	</form>
+
+{% endblock %}

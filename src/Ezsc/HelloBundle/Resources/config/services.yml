@@ -1,0 +1,7 @@
+parameters:
+#    ezsc_hello.example.class: Ezsc\HelloBundle\Example
+
+services:
+#    ezsc_hello.example:
+#        class: %ezsc_hello.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

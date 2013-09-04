@@ -1,0 +1,13 @@
+ezsc_model:
+    resource: "@EzscModelBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+ezsc_hello:
+    resource: "@EzscHelloBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ezsc_workshop:
+    resource: "@EzscWorkshopBundle/Resources/config/routing.yml"
+    prefix:   /
+

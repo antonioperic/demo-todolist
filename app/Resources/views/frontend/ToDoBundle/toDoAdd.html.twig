@@ -1,0 +1,22 @@
+<div class="container clearfix">
+	<div class="jumbotron clearfix">
+		<h2>New task</h2>
+                                    <form action="{{ path("practice_task_create", {'taskListId':entity.id}) }}" method="post">
+			<div class="form-group">
+                                                                {{ form_widget(task_form.name, {'attr':{'class':'form-control input-lg', 'placeholder':'Write all the mumbo jumbo you will not do...'}}) }}
+			</div>
+			<div class="form-inline">
+				<div class="form-group">
+                                                                                {{ form_widget(task_form.priority, {'attr':{'class':'form-control input-lg'}}) }}
+				</div>
+				<div class="form-group">
+					{{ form_widget(task_form.dateDeadlineAt) }}
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-lg">Add</button>
+				</div>
+			</div>
+                                                {{ form_rest(task_form) }}
+		</form>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+{% macro todolist(id) %}
+	{#<a href="#" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-ok"></i></a>#}
+	<a href="{{ path('practice_task_delete', {'id':id}) }}" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+{% endmacro %}
+            
+{% macro tasklist(id) %}
+	<a href="{{ path('practice_task-list_edit', {'id':id}) }}" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-edit"></i></a>
+	<a href="{{ path('practice_task-list_delete', {'id':id}) }}" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+{% endmacro %}
+
+{% macro userlist() %}
+    <button type="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+{% endmacro %}

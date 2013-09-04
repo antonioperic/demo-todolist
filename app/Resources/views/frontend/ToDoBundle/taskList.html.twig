@@ -1,0 +1,47 @@
+{% extends '::frontend/frontend.html.twig' %}
+{% from '::frontend/Macros/actions.html.twig' import tasklist %}
+{% import '::frontend/Macros/alerts.html.twig' as alerts %}
+
+{% block body_inner %}
+	<div class="page-header">
+		<h1>Task-List</h1>
+	</div>
+
+	{% include '::frontend/Helpers/messages.html.twig' %}
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Task</th>
+				<th>Created</th>
+                                                                <th>Assigned to</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for entity in entities %}
+			<tr>
+				<td>
+                                                                    <a href="{{ path('practice_task-list_show', {'id':entity.id}) }}">
+                                                                        {{ entity.name }}
+                                                                    </a>
+                                                                </td>
+				<td>{{ entity.dateCreatedAt|date("d.m.Y.") }}</td>
+                                                                <td>
+                                                                        {% if entity.users|length > 0 %}
+                                                                            {% for user in entity.users %}
+                                                                                {{ user.firstName }} {{ user.lastName }}
+                                                                                {% if not loop.last %}
+                                                                                    ,
+                                                                                {% endif %}
+                                                                            {% endfor %}
+                                                                        {% endif %}
+                                                                </td>
+				<td class="align-right">
+					{{ tasklist(entity.id) }}
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

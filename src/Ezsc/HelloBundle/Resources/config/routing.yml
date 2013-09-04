@@ -1,0 +1,7 @@
+ezsc_hello_homepage:
+    pattern:  /ezsc/hello/{name}
+    defaults: { _controller: EzscHelloBundle:Default:index }
+    
+ezsc_hello_square:
+    pattern:  /ezsc/square/{someNumber}
+    defaults: { _controller: EzscHelloBundle:Default:square }    

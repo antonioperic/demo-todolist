@@ -1,0 +1,15 @@
+ezsc_workshop_homepage:
+    pattern:  /practice
+    defaults: { _controller: EzscWorkshopBundle:Default:index }
+    
+ezsc_workshop_user:
+        resource: "@EzscWorkshopBundle/Resources/config/routing/user.yml"
+        prefix:   /practice/user
+        
+ezsc_workshop_task:
+        resource: "@EzscWorkshopBundle/Resources/config/routing/task.yml"
+        prefix:   /practice/task        
+        
+ezsc_workshop_task_list:
+        resource: "@EzscWorkshopBundle/Resources/config/routing/tasklist.yml"
+        prefix:   /practice/task-list        

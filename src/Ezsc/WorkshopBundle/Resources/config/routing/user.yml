@@ -1,0 +1,30 @@
+user:
+    pattern:  /
+    defaults: { _controller: "EzscWorkshopBundle:User:index"}
+
+user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EzscWorkshopBundle:User:show" }
+
+user_new:
+    pattern:  /new
+    defaults: { _controller: "EzscWorkshopBundle:User:new" }
+
+user_create:
+    pattern:  /create
+    defaults: { _controller: "EzscWorkshopBundle:User:create" }
+    requirements: { _method: post }
+
+user_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EzscWorkshopBundle:User:edit" }
+
+user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EzscWorkshopBundle:User:update" }
+    requirements: { _method: post|put }
+
+user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EzscWorkshopBundle:User:delete" }
+    requirements: { _method: post|delete|get }

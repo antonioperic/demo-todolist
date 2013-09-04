@@ -1,0 +1,22 @@
+practice_task_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EzscWorkshopBundle:Task:show" }
+
+practice_task_create:
+    pattern:  /{taskListId}/create
+    defaults: { _controller: "EzscWorkshopBundle:Task:create" }
+    requirements: { _method: post }
+
+practice_task_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EzscWorkshopBundle:Task:edit" }
+
+practice_task_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EzscWorkshopBundle:Task:update" }
+    requirements: { _method: post|put }
+
+practice_task_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EzscWorkshopBundle:Task:delete" }
+    requirements: { _method: post|delete|get }

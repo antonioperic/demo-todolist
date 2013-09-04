@@ -1,0 +1,4 @@
+ezsc_model_product:
+    resource: "@EzscModelBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+

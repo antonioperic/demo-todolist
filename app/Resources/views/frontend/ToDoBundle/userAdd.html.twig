@@ -1,0 +1,46 @@
+{% extends '::frontend/frontend.html.twig' %}
+{% from '::frontend/Macros/actions.html.twig' import userlist %}
+{% import '::frontend/Macros/alerts.html.twig' as alerts %}
+
+{% block body_inner %}
+
+	<div class="page-header">
+		<h1>Add a new user</h1>
+	</div>
+
+	{% include '::frontend/Helpers/messages.html.twig' %}
+
+	<form class="form-horizontal" method="POST" action="{{ path('user_create') }}" role="form">
+		<div class="form-group">
+			{{ form_label(form.firstName, label|default(null), {'label_attr':{'class':'col-lg-2 control-label sr-only'}}) }}
+			<div class="col-lg-10">
+                                                        {{ form_widget(form.firstName, {'attr':{'class':'form-control','placeholder':'First name'} }) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(form.lastName, label|default(null), {'label_attr':{'class':'col-lg-2 control-label sr-only'}}) }}
+			<div class="col-lg-10">
+                                                        {{ form_widget(form.lastName, {'attr':{'class':'form-control','placeholder':'Surname'} }) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(form.dateOfBirth, label|default(null), {'label_attr':{'class':'col-lg-2 control-label sr-only'}}) }}
+			<div class="col-lg-10">
+                                                        {{ form_widget(form.dateOfBirth, {'attr':{'class':'form-control','placeholder':'Date of birth'} }) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(form.company, label|default(null), {'label_attr':{'class':'col-lg-2 control-label sr-only'}}) }}
+			<div class="col-lg-10">
+                                                        {{ form_widget(form.company, {'attr':{'class':'form-control','placeholder':'Company'} }) }}
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-offset-2 col-lg-10">
+				<button type="submit" class="btn btn-primary">Create a user</button>
+			</div>
+		</div>
+                                {{ form_rest(form) }}
+	</form>
+
+{% endblock %}

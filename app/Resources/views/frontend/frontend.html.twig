@@ -1,0 +1,28 @@
+{% extends '::frontend/layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+	<link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+{% endblock %}
+          
+{% block body %}
+
+	{% include '::frontend/Helpers/header.html.twig' %}
+
+	{#% if route = 'home' %#}
+		{#% include '::frontend/Helpers/toDoAdd.html.twig' %#}
+	{#% endif %#}
+	
+	<div class="container theme-showcase">
+		{% block body_inner %}{% endblock %}
+	</div>      
+	
+	{% include '::frontend/Helpers/footer.html.twig' %}
+	
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/holder.js') }}"></script>
+{% endblock %}

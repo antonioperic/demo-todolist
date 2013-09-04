@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="Ezsc\WorkshopBundle\Entity\TaskRepository" name="Ezsc\WorkshopBundle\Entity\Task">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="name" type="string" column="name" length="255"/>
+    <field name="dateCreatedAt" type="datetime" column="dateCreatedAt"/>
+    <field name="dateDeadlineAt" type="datetime" column="dateDeadlineAt"/>
+    <field name="priority" type="integer" column="priority"/>
+    <many-to-one field="taskList" target-entity="TaskList" inversed-by="tasks">
+        <join-column name="task_list_id" referenced-column-name="id" />
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

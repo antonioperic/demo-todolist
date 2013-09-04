@@ -1,0 +1,7 @@
+parameters:
+#    ezsc_workshop.example.class: Ezsc\WorkshopBundle\Example
+
+services:
+#    ezsc_workshop.example:
+#        class: %ezsc_workshop.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
